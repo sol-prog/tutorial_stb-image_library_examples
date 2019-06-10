@@ -16,8 +16,6 @@ do { \
 
 // Check if a string "str" ends with a substring "ends"
 static inline bool str_ends_in(const char *str, const char *ends) {
-    size_t str_len = strlen(str);
-    size_t ends_len = strlen(ends);
-    char *pos = strstr(str, ends);
-    return (pos != NULL) && (pos + ends_len == str + str_len);
+    char *pos = strrchr(str, '.');
+    return !strcmp(pos, ends);
 }
