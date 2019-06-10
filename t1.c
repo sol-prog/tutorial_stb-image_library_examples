@@ -1,3 +1,4 @@
+// Load image using the stb_image library, convert the image to gray and sepia, write it back to disk
 #include <stdio.h>
 #include <stdlib.h>
 
