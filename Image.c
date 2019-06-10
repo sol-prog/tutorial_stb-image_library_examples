@@ -58,6 +58,7 @@ void Image_free(Image *img) {
 }
 
 void Image_to_gray(const Image *orig, Image *gray) {
+    ON_ERROR_EXIT(orig->allocation_ != NO_ALLOCATION && orig->channels >= 3, "The input image must have at least 3 channels.");
     int channels = orig->channels == 4 ? 2 : 1;
     Image_create(gray, orig->width, orig->height, channels, false);
     ON_ERROR_EXIT(gray->data == NULL, "Error in creating the image");
@@ -71,6 +72,7 @@ void Image_to_gray(const Image *orig, Image *gray) {
 }
 
 void Image_to_sepia(const Image *orig, Image *sepia) {
+    ON_ERROR_EXIT(orig->allocation_ != NO_ALLOCATION && orig->channels >= 3, "The input image must have at least 3 channels.");
     Image_create(sepia, orig->width, orig->height, orig->channels, false);
     ON_ERROR_EXIT(sepia->data == NULL, "Error in creating the image");
 
