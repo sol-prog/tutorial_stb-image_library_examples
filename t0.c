@@ -1,3 +1,4 @@
+// Load an image and save it in PNG and JPG format using stb_image libraries
 #include <stdio.h>
 #include <stdlib.h>
 
