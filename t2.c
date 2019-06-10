@@ -1,3 +1,5 @@
+// Example of using the Image library
+
 #include "Image.h"
 #include "utils.h"
 
